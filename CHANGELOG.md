@@ -1,5 +1,8 @@
 # Nightly Kernel Changelog
 
+**Version:** r1
+**Series:** nightcord_yuki
+
 ## 2026-08-11
 
 ### Fixed
