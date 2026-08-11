@@ -8,8 +8,9 @@
 ### Fixed
 - **Fixed bootloop caused by XZ-compressed ramdisk** — enabled `CONFIG_RD_XZ` so the kernel can decompress the initial ramdisk image. Previously the kernel panicked with "Could not decompress initial ramdisk image."
 
+
 ### Changed
-- **CI: zip filename now includes profile** — naming changed from `nightly_yuki-r1-(sha)-(device)-(buildtype)` to `nightly_yuki-r1-(sha)-(device)-(profile)-(buildtype)`. Applies to zip filename, artifact name, and release tag in both `build.yml` and `build-ksu.yml`.
+- **Enabled ThinLTO** — enabled `CONFIG_LTO_CLANG` and `CONFIG_THINLTO` for Link-Time Optimization, allowing the compiler to optimize the kernel globally at link time for better performance and smaller binary size.
 
 ### Fixed
 - **Fixed kernel link errors when CONFIG_TRACING is disabled** — added `#ifdef CONFIG_TRACING` / `#ifdef CONFIG_TRACEPOINTS` guards with no-op stubs to kernel headers:
